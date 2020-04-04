@@ -5,10 +5,24 @@
  */
 package services;
 
+import dataaccess.NoteDB;
+import java.util.List;
+import models.Note;
+
 /**
  *
  * @author 792807
  */
 public class NoteService {
+    NoteDB noteDB;
+    
+    public NoteService() {
+        noteDB = new NoteDB();
+    }
+    
+    public List<Note> getAll() {
+        List<Note> notesList = noteDB.getAll();
+        return notesList;
+    }
     
 }

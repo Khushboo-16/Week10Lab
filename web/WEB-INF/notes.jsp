@@ -24,9 +24,20 @@
                 <tr>
                     <td>${notes.datecreated}</td>
                     <td>${notes.title}</td>
-                    <td></td>
+                    <td>
+                        <form method="post">
+                            <input type="submit" name="edit" value="Edit" />
+                            <input type="hidden" name="noteID" value="${notes.noteid}" />
+                        </form>
+                    </td>
                 </tr>
             </c:forEach>
         </table>
+            <h2>Add Note</h2>
+            <form method="post">
+                <input type="text" name="noteTitle" /><br />
+                <textarea name="noteContent"></textarea><br />
+                <input type="submit" name="add" value="Add" />
+            </form>
     </body>
 </html>
